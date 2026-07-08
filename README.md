@@ -42,7 +42,7 @@ It is intended for C++ trading/data applications that want a native API without 
 ## Quick build
 
 ```powershell
-git clone https://github.com/<your-org>/mt5cpp.git
+git clone https://github.com/laixuanthoi/mt5cpp.git
 cd mt5cpp
 cmake -S . -B build -G "Visual Studio 17 2022" -DMT5CPP_BUILD_EXAMPLES=ON
 cmake --build build --config Release
