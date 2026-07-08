@@ -1,0 +1,10 @@
+/build/
+*.user
+*.suo
+*.VC.db
+*.pdb
+*.obj
+*.ilk
+*.exe
+__pycache__/
+*.pyc
