@@ -1,13 +1,19 @@
 cmake_minimum_required(VERSION 3.20)
 project(mt5cpp VERSION 0.1.0 LANGUAGES CXX)
 
-option(MT5CPP_BUILD_EXAMPLES "Build mt5cpp examples" ON)
+option(MT5CPP_BUILD_EXAMPLES "Build mt5cpp examples" ${PROJECT_IS_TOP_LEVEL})
 
 add_library(mt5cpp
   src/mt5cpp/NamedPipeTransport.cpp
   src/mt5cpp/Mt5Client.cpp
 )
 add_library(mt5cpp::mt5cpp ALIAS mt5cpp)
+
+set_target_properties(mt5cpp PROPERTIES
+  VERSION ${PROJECT_VERSION}
+  SOVERSION ${PROJECT_VERSION_MAJOR}
+  EXPORT_NAME mt5cpp
+)
 
 target_compile_features(mt5cpp PUBLIC cxx_std_17)
 target_include_directories(mt5cpp PUBLIC
